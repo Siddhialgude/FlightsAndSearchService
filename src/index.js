@@ -4,23 +4,22 @@ const bodyparser=require("body-parser");
 
 const{port}=require('./config/serverconfig')
 
-const CityRepository=require('./repository/city-repository.js')
-try{
+const CityRepository=require('./repository/city-repository')
+ 
 const setupAndStartServer=async()=>{
   //create an express object
   const app=express();
    app.use(bodyparser.json());
-   app.use(bodyparser.urlencoded({extended:true}));
+   app.use(bodyparser.urlencoded({extended:true})); 
   
   app.listen(port,async()=>{
   
     console.log(`Server started at ${port}`);
     const repo=new CityRepository();
-    repo.deleteCity({cityid:1});
+   // repo.createCity("mumbai");
+     
   }); 
 
 }
-}catch(error){
-  throw error;
-}
+
 setupAndStartServer();

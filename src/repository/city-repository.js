@@ -9,7 +9,7 @@ class CityRepository{
     }
     catch(error) {
       console.log("something went wrong in repository layer : ");
-      throw error;
+      throw {error};
     }
   }
   async getCity(cityId){
@@ -19,7 +19,7 @@ class CityRepository{
     }
     catch(error) {
       console.log("something went wrong in repository layer : ");
-      throw error;
+      throw {error};
     }
   }
   async updateCity(cityId,data){
@@ -34,7 +34,7 @@ class CityRepository{
     }
     catch(error) {
       console.log("something went wrong in repository layer : ");
-      throw error;
+      throw {error};
     }
   }
   async deleteCity(cityId)
@@ -49,10 +49,10 @@ class CityRepository{
     }
     catch(error) {
       console.log("something went wrong in repository layer : ");
-      throw error;
+      throw {error};
     }
 
   }
- 
+  
 }
 module.exports=CityRepository;
