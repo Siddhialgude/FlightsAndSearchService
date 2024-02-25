@@ -1,4 +1,4 @@
-const {CityService}=require('../services/city-service');
+const {CityService}=require('../services/index');
 
 const cityService=new CityService();
 
@@ -21,7 +21,7 @@ const create=async (req,res)=>{
       success:false,
       message:"not able to create a city",
       err:error
-    })
+    });
   }
 
 }
@@ -43,7 +43,7 @@ const destroy=async (req,res)=>{
       success:false,
       message:"not able to delete a city",
       err:error
-    })
+    });
   }
   
 }
@@ -54,7 +54,7 @@ const update=async(req,res)=>{
     return res.status(200).json({
       data:response,
       success:true,
-      message:"successfully deleted a city",
+      message:"successfully updated a city",
       err:{}});
 
   }
@@ -65,7 +65,7 @@ const update=async(req,res)=>{
       success:false,
       message:"not able to update a city",
       err:error
-    })
+    });
   }
   
 }
@@ -87,7 +87,7 @@ const get= async(req,res)=>{
       success:false,
       message:"not able to create a city",
       err:error
-    })
+    });
   }
   
 }
